@@ -10,9 +10,17 @@ body {
     background: #FAFAF5;
     color: #303630;
     line-height: 1.7;
+    overflow-x: hidden;
 }
 
-/* ================= NAVBAR ================= */
+a {
+    color: inherit;
+}
+
+
+/* ================================================= */
+/* NAVBAR */
+/* ================================================= */
 
 header {
     position: fixed;
@@ -21,6 +29,20 @@ header {
     z-index: 1000;
     background: rgba(250, 250, 245, 0.92);
     backdrop-filter: blur(10px);
+
+    animation: navbarMasuk 0.8s ease forwards;
+}
+
+@keyframes navbarMasuk {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .navbar {
@@ -52,6 +74,47 @@ footer span {
     gap: 30px;
 }
 
+.nav-menu li {
+    animation: menuMasuk 0.6s ease forwards;
+    opacity: 0;
+}
+
+.nav-menu li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.nav-menu li:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.nav-menu li:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.nav-menu li:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+.nav-menu li:nth-child(5) {
+    animation-delay: 0.6s;
+}
+
+.nav-menu li:nth-child(6) {
+    animation-delay: 0.7s;
+}
+
+@keyframes menuMasuk {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .nav-menu a {
     color: #303630;
     text-decoration: none;
@@ -78,7 +141,9 @@ footer span {
 }
 
 
-/* ================= GENERAL ================= */
+/* ================================================= */
+/* GENERAL */
+/* ================================================= */
 
 section {
     scroll-margin-top: 80px;
@@ -93,6 +158,20 @@ section {
 .section-title {
     text-align: center;
     margin-bottom: 55px;
+
+    animation: sectionTitleMasuk 1s ease forwards;
+}
+
+@keyframes sectionTitleMasuk {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .section-title p {
@@ -108,7 +187,9 @@ section {
 }
 
 
-/* ================= HERO ================= */
+/* ================================================= */
+/* HERO */
+/* ================================================= */
 
 .hero {
     min-height: 100vh;
@@ -122,8 +203,25 @@ section {
     gap: 50px;
 }
 
+
+/* Tulisan kiri */
+
 .hero-text {
     max-width: 650px;
+
+    animation: heroTextMasuk 1.1s ease forwards;
+}
+
+@keyframes heroTextMasuk {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .hello {
@@ -131,28 +229,55 @@ section {
     font-weight: 600;
     letter-spacing: 4px;
     margin-bottom: 10px;
+
+    animation: naik 0.8s ease 0.2s both;
 }
 
 .hero-text h1 {
     font-size: 65px;
     line-height: 1.2;
+
+    animation: naik 0.8s ease 0.4s both;
 }
 
 .hero-text h2 {
     font-size: 25px;
     color: #4F5A50;
     margin: 10px 0 20px;
+
+    animation: naik 0.8s ease 0.6s both;
 }
 
 .description {
     color: #667066;
     max-width: 600px;
+
+    animation: naik 0.8s ease 0.8s both;
 }
+
+@keyframes naik {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ================================================= */
+/* BUTTON */
+/* ================================================= */
 
 .hero-buttons {
     display: flex;
     gap: 15px;
     margin-top: 30px;
+
+    animation: naik 0.8s ease 1s both;
 }
 
 .btn {
@@ -174,7 +299,8 @@ section {
 
 .primary:hover {
     background: #607C63;
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(48, 54, 48, 0.15);
 }
 
 .secondary {
@@ -185,16 +311,33 @@ section {
 .secondary:hover {
     background: #78977B;
     color: white;
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(48, 54, 48, 0.12);
 }
 
 
-/* ================= PROFILE ================= */
+/* ================================================= */
+/* PROFILE */
+/* ================================================= */
 
 .hero-image {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    animation: fotoMasuk 1.2s ease 0.3s both;
+}
+
+@keyframes fotoMasuk {
+    from {
+        opacity: 0;
+        transform: translateX(80px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
 }
 
 .profile-circle {
@@ -204,9 +347,26 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    animation: melayang 4s ease-in-out 1.5s infinite;
 }
 
-/* Lingkaran tipis di luar foto */
+@keyframes melayang {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* Lingkaran luar */
 
 .profile-circle::before {
     content: "";
@@ -216,7 +376,20 @@ section {
     border: 2px solid #A7AEA8;
     border-radius: 50%;
     z-index: 0;
+
+    animation: putarLingkaran 8s linear infinite;
 }
+
+@keyframes putarLingkaran {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 /* Foto */
 
@@ -229,16 +402,19 @@ section {
     border-radius: 50%;
     border: 5px solid #FFFFFF;
     z-index: 1;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     box-shadow: 0 10px 25px rgba(48, 54, 48, 0.12);
+
+    transition: 0.4s;
 }
 
-.profile-placeholder span {
-    font-size: 80px;
-    font-weight: 700;
-    color: #78977B;
+.profile-placeholder:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(48, 54, 48, 0.2);
 }
 
 .profile-placeholder img {
@@ -250,19 +426,10 @@ section {
     border-radius: 50%;
 }
 
-/* Hiasan daun di kanan bawah */
 
-.leaf-decoration {
-    position: absolute;
-    right: 18px;
-    bottom: 25px;
-    font-size: 42px;
-    z-index: 3;
-    transform: rotate(-25deg);
-}
-
-
-/* ================= ABOUT ================= */
+/* ================================================= */
+/* ABOUT */
+/* ================================================= */
 
 .about-container {
     display: grid;
@@ -276,17 +443,59 @@ section {
     border-radius: 15px;
     padding: 35px 25px;
     text-align: center;
+
+    opacity: 0;
+    animation: cardMasuk 0.8s ease forwards;
+
     transition: 0.3s;
+}
+
+.about-card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.about-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.about-card:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+@keyframes cardMasuk {
+    from {
+        opacity: 0;
+        transform: translateY(45px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .about-card:hover {
     transform: translateY(-8px);
     border-color: #78977B;
+    box-shadow: 0 12px 25px rgba(48, 54, 48, 0.08);
 }
 
 .about-icon {
     font-size: 40px;
     margin-bottom: 15px;
+
+    animation: iconGerak 2.5s ease-in-out infinite;
+}
+
+@keyframes iconGerak {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 .about-card h3 {
@@ -299,11 +508,14 @@ section {
 }
 
 
-/* ================= SKILLS ================= */
+/* ================================================= */
+/* SKILLS */
+/* ================================================= */
 
 .skills-section {
     background: #EAF0E8;
     max-width: none;
+
     padding-left: calc((100% - 1100px) / 2);
     padding-right: calc((100% - 1100px) / 2);
 }
@@ -311,15 +523,57 @@ section {
 .skills-container {
     max-width: 900px;
     margin: auto;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px 60px;
+}
+
+.skill {
+    animation: skillMasuk 0.8s ease both;
+}
+
+.skill:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.skill:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.skill:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.skill:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+.skill:nth-child(5) {
+    animation-delay: 0.6s;
+}
+
+.skill:nth-child(6) {
+    animation-delay: 0.7s;
+}
+
+@keyframes skillMasuk {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .skill-info {
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
+
     font-size: 14px;
     font-weight: 500;
 }
@@ -338,35 +592,57 @@ section {
 .progress-bar {
     height: 100%;
     border-radius: 10px;
-    background: linear-gradient(90deg, #78977B, #A9BEA5);
+    background: linear-gradient(
+        90deg,
+        #78977B,
+        #A9BEA5
+    );
+
+    transform-origin: left;
+    animation: progressMasuk 1.5s ease forwards;
 }
 
+@keyframes progressMasuk {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+
+/* Sesuai persentase di HTML */
+
 .html {
-    width: 90%;
+    width: 65%;
 }
 
 .css {
-    width: 85%;
+    width: 60%;
 }
 
 .javascript {
-    width: 75%;
+    width: 65%;
 }
 
 .vscode {
-    width: 90%;
-}
-
-.php {
     width: 70%;
 }
 
+.php {
+    width: 50%;
+}
+
 .mysql {
-    width: 75%;
+    width: 60%;
 }
 
 
-/* ================= PROJECT ================= */
+/* ================================================= */
+/* PROJECT */
+/* ================================================= */
 
 .projects-container {
     display: grid;
@@ -379,21 +655,58 @@ section {
     border: 1px solid #D7E2D5;
     border-radius: 15px;
     overflow: hidden;
+
+    opacity: 0;
+    animation: projectMasuk 0.9s ease forwards;
+
     transition: 0.3s;
+}
+
+.project-card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.project-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.project-card:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+@keyframes projectMasuk {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .project-card:hover {
     transform: translateY(-8px);
     border-color: #78977B;
+    box-shadow: 0 15px 30px rgba(48, 54, 48, 0.1);
 }
 
 .project-image {
     height: 180px;
     background: #E0E9DF;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     font-size: 65px;
+
+    transition: 0.4s;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.03);
 }
 
 .project-content {
@@ -422,14 +735,52 @@ section {
     font-size: 11px;
     padding: 5px 10px;
     border-radius: 20px;
+
+    transition: 0.3s;
+}
+
+.tags span:hover {
+    transform: translateY(-3px);
+    background: #78977B;
+    color: white;
 }
 
 
-/* ================= EDUCATION ================= */
+/* ================================================= */
+/* LIHAT PROJECT */
+/* ================================================= */
+
+.project-card .project-link {
+    display: block !important;
+    width: fit-content;
+
+    margin: 12px 25px 25px 25px !important;
+    padding: 0 !important;
+
+    color: #78977B !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+
+    text-decoration: none !important;
+
+    transition: 0.3s;
+}
+
+.project-card .project-link:hover {
+    color: #607C63 !important;
+    transform: translateX(5px);
+}
+
+
+/* ================================================= */
+/* EDUCATION */
+/* ================================================= */
 
 .education-section {
     background: #EAF0E8;
     max-width: none;
+
     padding-left: calc((100% - 900px) / 2);
     padding-right: calc((100% - 900px) / 2);
 }
@@ -437,6 +788,7 @@ section {
 .timeline {
     max-width: 750px;
     margin: auto;
+
     border-left: 2px solid #78977B;
     padding-left: 30px;
 }
@@ -444,23 +796,71 @@ section {
 .timeline-item {
     position: relative;
     margin-bottom: 45px;
+
+    animation: timelineMasuk 0.9s ease both;
+}
+
+.timeline-item:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.timeline-item:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+@keyframes timelineMasuk {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .timeline-dot {
     position: absolute;
+
     width: 15px;
     height: 15px;
+
     background: #78977B;
     border-radius: 50%;
+
     left: -39px;
     top: 5px;
-    box-shadow: 0 0 15px rgba(120, 151, 123, 0.7);
+
+    box-shadow:
+        0 0 0 5px rgba(120, 151, 123, 0.12),
+        0 0 15px rgba(120, 151, 123, 0.7);
+
+    animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
 }
 
 .timeline-content {
     background: #FFFFFF;
     padding: 25px;
     border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.timeline-content:hover {
+    transform: translateX(8px);
+    box-shadow: 0 10px 25px rgba(48, 54, 48, 0.08);
 }
 
 .timeline-content span {
@@ -473,13 +873,31 @@ section {
 }
 
 
-/* ================= CONTACT ================= */
+/* ================================================= */
+/* CONTACT */
+/* ================================================= */
 
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: start;
+}
+
+.contact-info {
+    animation: contactKiri 0.9s ease forwards;
+}
+
+@keyframes contactKiri {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .contact-info h3 {
@@ -496,6 +914,12 @@ section {
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
+
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    transform: translateX(8px);
 }
 
 .contact-item > span {
@@ -507,29 +931,62 @@ section {
     font-size: 14px;
 }
 
+.contact-item a {
+    color: #78977B;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-item a:hover {
+    color: #607C63;
+}
+
 .contact-form {
     background: #FFFFFF;
     border: 1px solid #D7E2D5;
+
     padding: 30px;
     border-radius: 15px;
+
+    animation: contactKanan 0.9s ease forwards;
+}
+
+@keyframes contactKanan {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
+
     padding: 14px;
     margin-bottom: 15px;
+
     background: #FAFAF5;
     color: #303630;
+
     border: 1px solid #D7E2D5;
     border-radius: 8px;
+
     outline: none;
+
     font-family: inherit;
+
+    transition: 0.3s;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: #78977B;
+    box-shadow: 0 0 0 3px rgba(120, 151, 123, 0.1);
 }
 
 .contact-form button {
@@ -537,12 +994,28 @@ section {
 }
 
 
-/* ================= FOOTER ================= */
+/* ================================================= */
+/* FOOTER */
+/* ================================================= */
 
 footer {
     background: #E0E9DF;
     text-align: center;
     padding: 50px 20px 25px;
+
+    animation: footerMasuk 1s ease forwards;
+}
+
+@keyframes footerMasuk {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .footer-content h2 {
@@ -569,6 +1042,7 @@ footer {
 
 .social-links a:hover {
     color: #78977B;
+    transform: translateY(-3px);
 }
 
 .copyright {
@@ -576,7 +1050,18 @@ footer {
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* ================================================= */
+/* CONTACT TITLE HIJAU */
+/* ================================================= */
+
+.contact-item > div > :first-child {
+    color: #78977B !important;
+}
+
+
+/* ================================================= */
+/* RESPONSIVE TABLET */
+/* ================================================= */
 
 @media (max-width: 900px) {
 
@@ -630,18 +1115,27 @@ footer {
 }
 
 
+/* ================================================= */
+/* RESPONSIVE HP */
+/* ================================================= */
+
 @media (max-width: 700px) {
 
     .nav-menu {
         position: absolute;
         top: 75px;
         left: -100%;
+
         width: 100%;
+
         background: #FAFAF5;
+
         flex-direction: column;
         text-align: center;
+
         padding: 30px;
         gap: 20px;
+
         transition: 0.3s;
     }
 
@@ -683,102 +1177,127 @@ footer {
         width: 195px;
         height: 195px;
     }
+}
 
-    .profile-placeholder span {
-        font-size: 60px;
+
+/* ================================================= */
+/* ANIMASI SAAT HALAMAN DIBUKA */
+/* ================================================= */
+
+/* Membuat halaman terasa hidup saat pertama dibuka */
+
+.hero,
+.about-container,
+.skills-container,
+.projects-container,
+.timeline,
+.contact-container,
+footer {
+    animation-timing-function: ease;
+}
+
+
+/* Mengurangi animasi jika user memilih reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 
-    .leaf-decoration {
-        right: 10px;
-        bottom: 18px;
-        font-size: 32px;
-    }
+}
+/* ==========================================
+   ANIMASI SAAT SCROLL
+========================================== */
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.9s ease;
+}
+
+.scroll-animate.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
-/* ================= LINK ================= */
-
-.contact-item a {
-    color: #78977B;
-    text-decoration: none;
-    transition: 0.3s;
+/* Card About */
+.about-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
 }
 
-.contact-item a:hover {
-    color: #607C63;
-}
-
-
-/* ================= LIHAT PROJECT ================= */
-
-.project-content a {
-    display: inline-block;
-    color: #78977B;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 500;
-    margin-top: 15px;
-    transition: 0.3s;
-}
-
-.project-content a:hover {
-    color: #607C63;
-    transform: translateX(3px);
+.about-card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
-/* Semua link agar tidak muncul biru */
+/* Skill */
+.skill {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.8s ease;
+}
 
-a {
-    color: inherit;
+.skill.show {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 
-/* ================= CONTACT TITLE HIJAU ================= */
-
-.contact-item > div > :first-child {
-    color: #78977B !important;
-}
-/* ===== RAPIIKAN LIHAT PROJECT ===== */
-
-.project-card .project-content a {
-    display: inline-block !important;
-    font-size: 12px !important;
-    font-weight: 400 !important;
-    padding: 0 !important;
-    margin-top: 12px !important;
-    color: #78977B !important;
-    text-decoration: none !important;
-    line-height: 1.4 !important;
+/* Project */
+.project-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
 }
 
-.project-card .project-content a:hover {
-    color: #607C63 !important;
-    transform: translateX(3px);
-}
-/* ================= RAPIIKAN LIHAT PROJECT ================= */
-
-.project-card .project-link {
-    display: block !important;
-    width: fit-content;
-    margin: 12px 25px 25px 25px !important;
-    padding: 0 !important;
-
-    color: #78977B !important;
-    font-size: 13px !important;
-    font-weight: 500 !important;
-    line-height: 1.4 !important;
-
-    text-decoration: none !important;
-    transition: 0.3s;
+.project-card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.project-card .project-link:hover {
-    color: #607C63 !important;
-    transform: translateX(3px);
+
+/* Education */
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease;
 }
 
-.project-card .project-link i {
-    font-size: 11px;
-    margin-left: 4px;
+.timeline-item.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Contact */
+.contact-info {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease;
+}
+
+.contact-info.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.contact-form {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease;
+}
+
+.contact-form.show {
+    opacity: 1;
+    transform: translateX(0);
 }
