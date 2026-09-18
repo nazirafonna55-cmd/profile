@@ -1,59 +1,61 @@
-// ================= MOBILE MENU =================
+/* ==========================================
+   ANIMASI SAAT SCROLL
+========================================== */
+
+const animatedElements = document.querySelectorAll(
+    ".about-card, .skill, .project-card, .timeline-item, .contact-info, .contact-form"
+);
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            } else {
+                entry.target.classList.remove("show");
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+animatedElements.forEach((element) => {
+    observer.observe(element);
+});
+
+
+/* ==========================================
+   MENU MOBILE
+========================================== */
 
 const menuBtn = document.querySelector(".menu-btn");
 const navMenu = document.querySelector(".nav-menu");
 
-menuBtn.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-});
+if (menuBtn && navMenu) {
 
-
-// Menutup menu setelah memilih navigasi
-
-document.querySelectorAll(".nav-menu a").forEach(link => {
-
-    link.addEventListener("click", () => {
-        navMenu.classList.remove("active");
+    menuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
     });
 
-});
+}
 
 
-// ================= CONTACT FORM =================
+/* Tutup menu setelah klik menu */
 
-const contactForm = document.getElementById("contactForm");
+document.querySelectorAll(".nav-menu a").forEach((link) => {
 
-contactForm.addEventListener("submit", function(event) {
+    link.addEventListener("click", () => {
 
-    event.preventDefault();
-
-    alert("Pesan berhasil dikirim! Terima kasih sudah menghubungi saya.");
-
-    contactForm.reset();
-
-});
-
-
-// ================= SKILL ANIMATION =================
-
-const progressBars = document.querySelectorAll(".progress-bar");
-
-const observer = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-            entry.target.style.transition = "width 1.5s ease";
+        if (navMenu) {
+            navMenu.classList.remove("active");
         }
 
     });
 
-}, {
-    threshold: 0.5
 });
-
-
-progressBars.forEach(bar => {
-    observer.observe(bar);
-});
-```
