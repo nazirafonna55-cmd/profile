@@ -7,8 +7,8 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background: #FFF7F0;
-    color: #4A3B38;
+    background: #FAFAF5;
+    color: #303630;
     line-height: 1.7;
 }
 
@@ -19,7 +19,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(255, 247, 240, 0.92);
+    background: rgba(250, 250, 245, 0.92);
     backdrop-filter: blur(10px);
 }
 
@@ -36,14 +36,14 @@ header {
 .logo {
     font-size: 28px;
     font-weight: 700;
-    color: #4A3B38;
+    color: #303630;
     text-decoration: none;
 }
 
 .logo span,
 .hero-text h1 span,
 footer span {
-    color: #E58B78;
+    color: #78977B;
 }
 
 .nav-menu {
@@ -53,14 +53,14 @@ footer span {
 }
 
 .nav-menu a {
-    color: #4A3B38;
+    color: #303630;
     text-decoration: none;
     font-size: 14px;
     transition: 0.3s;
 }
 
 .nav-menu a:hover {
-    color: #E58B78;
+    color: #78977B;
 }
 
 .menu-btn {
@@ -72,7 +72,7 @@ footer span {
     display: block;
     width: 25px;
     height: 3px;
-    background: #4A3B38;
+    background: #303630;
     margin: 5px;
     border-radius: 5px;
 }
@@ -96,7 +96,7 @@ section {
 }
 
 .section-title p {
-    color: #E58B78;
+    color: #78977B;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 3px;
@@ -127,7 +127,7 @@ section {
 }
 
 .hello {
-    color: #E58B78;
+    color: #78977B;
     font-weight: 600;
     letter-spacing: 4px;
     margin-bottom: 10px;
@@ -140,12 +140,12 @@ section {
 
 .hero-text h2 {
     font-size: 25px;
-    color: #6F5A54;
+    color: #4F5A50;
     margin: 10px 0 20px;
 }
 
 .description {
-    color: #806D67;
+    color: #667066;
     max-width: 600px;
 }
 
@@ -168,22 +168,22 @@ section {
 }
 
 .primary {
-    background: #E58B78;
+    background: #78977B;
     color: white;
 }
 
 .primary:hover {
-    background: #D87360;
+    background: #607C63;
     transform: translateY(-3px);
 }
 
 .secondary {
-    border: 1px solid #E58B78;
-    color: #E58B78;
+    border: 1px solid #78977B;
+    color: #78977B;
 }
 
 .secondary:hover {
-    background: #E58B78;
+    background: #78977B;
     color: white;
     transform: translateY(-3px);
 }
@@ -198,28 +198,67 @@ section {
 }
 
 .profile-circle {
+    position: relative;
     width: 330px;
     height: 330px;
-    border-radius: 50%;
-    padding: 10px;
-    background: linear-gradient(135deg, #E58B78, #F3B0A0);
-    box-shadow: 0 0 60px rgba(229, 139, 120, 0.3);
-}
-
-.profile-placeholder {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: #FFF4ED;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Lingkaran tipis di luar foto */
+
+.profile-circle::before {
+    content: "";
+    position: absolute;
+    width: 285px;
+    height: 285px;
+    border: 2px solid #A7AEA8;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* Foto */
+
+.profile-placeholder {
+    position: relative;
+    width: 270px;
+    height: 270px;
+    overflow: hidden;
+    background: #FFFFFF;
+    border-radius: 50%;
+    border: 5px solid #FFFFFF;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(48, 54, 48, 0.12);
+}
+
 .profile-placeholder span {
     font-size: 80px;
     font-weight: 700;
-    color: #E58B78;
+    color: #78977B;
+}
+
+.profile-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    display: block;
+    border-radius: 50%;
+}
+
+/* Hiasan daun di kanan bawah */
+
+.leaf-decoration {
+    position: absolute;
+    right: 18px;
+    bottom: 25px;
+    font-size: 42px;
+    z-index: 3;
+    transform: rotate(-25deg);
 }
 
 
@@ -233,7 +272,7 @@ section {
 
 .about-card {
     background: #FFFFFF;
-    border: 1px solid #F2D5C8;
+    border: 1px solid #D7E2D5;
     border-radius: 15px;
     padding: 35px 25px;
     text-align: center;
@@ -242,7 +281,7 @@ section {
 
 .about-card:hover {
     transform: translateY(-8px);
-    border-color: #E58B78;
+    border-color: #78977B;
 }
 
 .about-icon {
@@ -255,7 +294,7 @@ section {
 }
 
 .about-card p {
-    color: #806D67;
+    color: #667066;
     font-size: 14px;
 }
 
@@ -263,7 +302,7 @@ section {
 /* ================= SKILLS ================= */
 
 .skills-section {
-    background: #FFF0E8;
+    background: #EAF0E8;
     max-width: none;
     padding-left: calc((100% - 1100px) / 2);
     padding-right: calc((100% - 1100px) / 2);
@@ -286,12 +325,12 @@ section {
 }
 
 .skill-info span:last-child {
-    color: #E58B78;
+    color: #78977B;
 }
 
 .progress {
     height: 9px;
-    background: #F2D5C8;
+    background: #D7E2D5;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -299,7 +338,7 @@ section {
 .progress-bar {
     height: 100%;
     border-radius: 10px;
-    background: linear-gradient(90deg, #E58B78, #F3B0A0);
+    background: linear-gradient(90deg, #78977B, #A9BEA5);
 }
 
 .html {
@@ -337,7 +376,7 @@ section {
 
 .project-card {
     background: #FFFFFF;
-    border: 1px solid #F2D5C8;
+    border: 1px solid #D7E2D5;
     border-radius: 15px;
     overflow: hidden;
     transition: 0.3s;
@@ -345,12 +384,12 @@ section {
 
 .project-card:hover {
     transform: translateY(-8px);
-    border-color: #E58B78;
+    border-color: #78977B;
 }
 
 .project-image {
     height: 180px;
-    background: #FFE9DE;
+    background: #E0E9DF;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -366,7 +405,7 @@ section {
 }
 
 .project-content p {
-    color: #806D67;
+    color: #667066;
     font-size: 14px;
 }
 
@@ -378,8 +417,8 @@ section {
 }
 
 .tags span {
-    background: #F2D5C8;
-    color: #D87360;
+    background: #D7E2D5;
+    color: #607C63;
     font-size: 11px;
     padding: 5px 10px;
     border-radius: 20px;
@@ -389,7 +428,7 @@ section {
 /* ================= EDUCATION ================= */
 
 .education-section {
-    background: #FFF0E8;
+    background: #EAF0E8;
     max-width: none;
     padding-left: calc((100% - 900px) / 2);
     padding-right: calc((100% - 900px) / 2);
@@ -398,7 +437,7 @@ section {
 .timeline {
     max-width: 750px;
     margin: auto;
-    border-left: 2px solid #E58B78;
+    border-left: 2px solid #78977B;
     padding-left: 30px;
 }
 
@@ -411,11 +450,11 @@ section {
     position: absolute;
     width: 15px;
     height: 15px;
-    background: #E58B78;
+    background: #78977B;
     border-radius: 50%;
     left: -39px;
     top: 5px;
-    box-shadow: 0 0 15px rgba(229, 139, 120, 0.7);
+    box-shadow: 0 0 15px rgba(120, 151, 123, 0.7);
 }
 
 .timeline-content {
@@ -425,12 +464,12 @@ section {
 }
 
 .timeline-content span {
-    color: #E58B78;
+    color: #78977B;
     font-size: 13px;
 }
 
 .timeline-content p {
-    color: #806D67;
+    color: #667066;
 }
 
 
@@ -449,7 +488,7 @@ section {
 }
 
 .contact-info > p {
-    color: #806D67;
+    color: #667066;
     margin-bottom: 30px;
 }
 
@@ -464,13 +503,13 @@ section {
 }
 
 .contact-item p {
-    color: #806D67;
+    color: #667066;
     font-size: 14px;
 }
 
 .contact-form {
     background: #FFFFFF;
-    border: 1px solid #F2D5C8;
+    border: 1px solid #D7E2D5;
     padding: 30px;
     border-radius: 15px;
 }
@@ -480,9 +519,9 @@ section {
     width: 100%;
     padding: 14px;
     margin-bottom: 15px;
-    background: #FFF7F0;
-    color: #4A3B38;
-    border: 1px solid #F2D5C8;
+    background: #FAFAF5;
+    color: #303630;
+    border: 1px solid #D7E2D5;
     border-radius: 8px;
     outline: none;
     font-family: inherit;
@@ -490,7 +529,7 @@ section {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #E58B78;
+    border-color: #78977B;
 }
 
 .contact-form button {
@@ -501,7 +540,7 @@ section {
 /* ================= FOOTER ================= */
 
 footer {
-    background: #FFE9DE;
+    background: #E0E9DF;
     text-align: center;
     padding: 50px 20px 25px;
 }
@@ -511,7 +550,7 @@ footer {
 }
 
 .footer-content > p {
-    color: #8C7770;
+    color: #707A71;
     margin: 8px 0;
 }
 
@@ -523,13 +562,13 @@ footer {
 }
 
 .social-links a {
-    color: #6F5A54;
+    color: #4F5A50;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .social-links a:hover {
-    color: #E58B78;
+    color: #78977B;
 }
 
 .copyright {
@@ -560,6 +599,16 @@ footer {
         height: 260px;
     }
 
+    .profile-placeholder {
+        width: 215px;
+        height: 215px;
+    }
+
+    .profile-circle::before {
+        width: 230px;
+        height: 230px;
+    }
+
     .about-container,
     .projects-container {
         grid-template-columns: 1fr;
@@ -588,7 +637,7 @@ footer {
         top: 75px;
         left: -100%;
         width: 100%;
-        background: #FFF7F0;
+        background: #FAFAF5;
         flex-direction: column;
         text-align: center;
         padding: 30px;
@@ -625,71 +674,111 @@ footer {
         height: 220px;
     }
 
+    .profile-placeholder {
+        width: 180px;
+        height: 180px;
+    }
+
+    .profile-circle::before {
+        width: 195px;
+        height: 195px;
+    }
+
     .profile-placeholder span {
         font-size: 60px;
+    }
+
+    .leaf-decoration {
+        right: 10px;
+        bottom: 18px;
+        font-size: 32px;
     }
 }
 
 
-/* ================= PROFILE IMAGE ================= */
-
-.profile-placeholder {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.profile-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
-
-.profile-placeholder {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.profile-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 25%;
-    border-radius: 50%;
-    display: block;
-}
-/* ================= HILANGKAN WARNA BIRU LINK ================= */
+/* ================= LINK ================= */
 
 .contact-item a {
-    color: #E58B78;
+    color: #78977B;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .contact-item a:hover {
-    color: #D87360;
+    color: #607C63;
 }
 
+
+/* ================= LIHAT PROJECT ================= */
+
 .project-content a {
-    color: #E58B78;
+    display: inline-block;
+    color: #78977B;
     text-decoration: none;
+    font-size: 13px;
     font-weight: 500;
+    margin-top: 15px;
     transition: 0.3s;
 }
 
 .project-content a:hover {
-    color: #D87360;
+    color: #607C63;
+    transform: translateX(3px);
 }
 
+
 /* Semua link agar tidak muncul biru */
+
 a {
     color: inherit;
+}
+
+
+/* ================= CONTACT TITLE HIJAU ================= */
+
+.contact-item > div > :first-child {
+    color: #78977B !important;
+}
+/* ===== RAPIIKAN LIHAT PROJECT ===== */
+
+.project-card .project-content a {
+    display: inline-block !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    padding: 0 !important;
+    margin-top: 12px !important;
+    color: #78977B !important;
+    text-decoration: none !important;
+    line-height: 1.4 !important;
+}
+
+.project-card .project-content a:hover {
+    color: #607C63 !important;
+    transform: translateX(3px);
+}
+/* ================= RAPIIKAN LIHAT PROJECT ================= */
+
+.project-card .project-link {
+    display: block !important;
+    width: fit-content;
+    margin: 12px 25px 25px 25px !important;
+    padding: 0 !important;
+
+    color: #78977B !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+
+    text-decoration: none !important;
+    transition: 0.3s;
+}
+
+.project-card .project-link:hover {
+    color: #607C63 !important;
+    transform: translateX(3px);
+}
+
+.project-card .project-link i {
+    font-size: 11px;
+    margin-left: 4px;
 }
